@@ -20,22 +20,33 @@ allApartments.map(
   }
 )
 
-//   var markerHeight = 50, markerRadius = 10, linearOffset = 25;
-// var popupOffsets = {
-// 'top': [0, 0],
-// 'top-left': [0,0],
-// 'top-right': [0,0],
-// 'bottom': [0, -markerHeight],
-// 'bottom-left': [linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
-// 'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
-// 'left': [markerRadius, (markerHeight - markerRadius) * -1],
-// 'right': [-markerRadius, (markerHeight - markerRadius) * -1]
-// };
-// var popup = new mapboxgl.Popup({offset: popupOffsets, className: 'my-class'})
-// .setLngLat([-86.78, 36.16])
-// .setHTML("<h1>Hello World!</h1>")
-// .setMaxWidth("150px")
-// .addTo(map);
+map.on('mouseover', event => {
+
+  allApartments.map(
+    location => {
+      if ((event.lngLat.lng).toFixed(2) === (location.coordinates.lng).toFixed(2) && (event.lngLat.lat).toFixed(2) === (location.coordinates.lat).toFixed(2)) {
+            var popup = new mapboxgl.Popup({offset: popupOffsets, className: 'my-class'})
+            .setLngLat(event.lngLat)
+            .setHTML(`<h1>${location.name}</h1>`)
+            .setMaxWidth("150px")
+            .addTo(map);
+          }
+
+    }
+  )
+});
+
+   var markerHeight = 50, markerRadius = 10, linearOffset = 25;
+ var popupOffsets = {
+ 'top': [0, 0],
+ 'top-left': [0,0],
+ 'top-right': [0,0],
+ 'bottom': [0, -markerHeight],
+ 'bottom-left': [linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+ 'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+ 'left': [markerRadius, (markerHeight - markerRadius) * -1],
+ 'right': [-markerRadius, (markerHeight - markerRadius) * -1]
+ };
     //Add locations
     map.on('click', event => {
         let response = window.confirm("Add this location to your apartment list?")
