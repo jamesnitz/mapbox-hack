@@ -25,12 +25,14 @@ map.on('mouseover', event => {
   allApartments.map(
     location => {
       if ((event.lngLat.lng).toFixed(2) === (location.coordinates.lng).toFixed(2) && (event.lngLat.lat).toFixed(2) === (location.coordinates.lat).toFixed(2)) {
-            var popup = new mapboxgl.Popup({offset: popupOffsets, className: 'my-class'})
-            .setLngLat(event.lngLat)
-            .setHTML(`<h1>${location.name}</h1>`)
-            .setMaxWidth("150px")
-            .addTo(map);
-          }
+        console.log(map)
+          var popup = new mapboxgl.Popup({offset: popupOffsets, className: 'my-class'})
+          .setLngLat(event.lngLat)
+          .setHTML(`<h1>${location.name}</h1>`)
+          .setMaxWidth("150px")
+          .addTo(map);
+        
+      }    
 
     }
   )
