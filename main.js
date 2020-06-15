@@ -1,3 +1,9 @@
 import {mappy} from "./mapbox.js"
+import {getApartments} from "./aptDataProvider.js"
 
-mappy();
+
+getApartments().then(
+  () => {
+    mappy()
+  }
+)

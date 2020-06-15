@@ -1,12 +1,28 @@
 {
   "savedLocations": [
     {
-      "id": 1,
-      "coordinates": [-86.78, 36.16]
+      "name": "The shay",
+      "coordinates": {
+        "lng": -86.81150966129582,
+        "lat": 36.140304051853064
+      },
+      "id": 3
     },
     {
-      "id": 2,
-      "coordinates": [-86.78, 36.16]
+      "name": "the yahs",
+      "coordinates": {
+        "lng": -86.92496333266753,
+        "lat": 36.11119717352895
+      },
+      "id": 4
+    },
+    {
+      "name": "apt",
+      "coordinates": {
+        "lng": -86.74537540104929,
+        "lat": 36.036378054825306
+      },
+      "id": 5
     }
   ]
 }
