@@ -5,7 +5,7 @@ export const useApartments = () => {
 }
 
 export const getApartments = () => {
-  return fetch ("http://localhost:3000/savedLocations")
+  return fetch ("http://localhost:3000/savedLocations/")
   .then(response => response.json())
   .then(
     parsed => {
