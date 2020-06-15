@@ -5,7 +5,7 @@ export const useApartments = () => {
 }
 
 export const getApartments = () => {
-  return fetch ("http://localhost:3000/savedLocations")
+  return fetch ("https://localhost:3000/savedLocations/")
   .then(response => response.json())
   .then(
     parsed => {
@@ -15,7 +15,7 @@ export const getApartments = () => {
 }
 
 export const addApartment = apt => {
-  return fetch ("http://localhost:3000/savedLocations", {
+  return fetch ("https://localhost:3000/savedLocations/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
